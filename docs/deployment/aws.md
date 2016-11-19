@@ -2,13 +2,17 @@
 
 Amazon AWS allows you access to a free tier of service for a year, so it is a great option if you are looking for a place to host your project and want to grow your Ops skills along with your dev skills.
 
-##### SIGN UP
+#### SIGN UP
 
-The first thing you will need to do is sign up for an [account](https://aws.amazon.com/free/)
+The first thing you will need to do is sign up for an [account](https://aws.amazon.com/free/) - 🔒 remember to set up [multi factor authentication](https://aws.amazon.com/iam/details/mfa/) for increased security in your AWS environments! 
 
-Amazon has a lot of options, but we will be focused on the more simple way for deploying, using EC2, so navigate to the EC2 dashboard.
+Amazon has a lot of options, but we will be focused on the simpler way for deploying - using EC2 - so navigate to the EC2 dashboard!
 
-##### SECURITY GROUP
+**:information_source: What is EC2 ?**
+
+Amazon Elastic Compute Cloud (EC2) is a web service which provides resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier for developers. EC2 instances are located within a Virtual Private Cloud (VPC) that is a logically isolated network you control. Amazon VPC provides you with a number of network security tools you can use to control who can access your instances.
+
+#### SECURITY GROUP
 
 Before you initialize a new instance you will need to set up a security group. This security group will just open the ports you need for development. Once you go to production you should SERIOUSLY consider a more locked down security group.
 
@@ -83,3 +87,8 @@ To remedy this will will use [forever](https://www.npmjs.com/package/forever). W
 The simplest way to remove the port would be user IP Tables. Running `sudo iptables -t nat -I PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 3000` This solution is fine if you are just building a small side project and want a clean url, but don't care that much about security.
 
 A more production ready solution would be to use [NginX](https://www.nginx.com/resources/wiki/) and use the reverse proxy to allow the project to run on its own port, while the users access the using port 80. A simple tutorial can be found [here](https://eladnava.com/binding-nodejs-port-80-using-nginx/). NginX has the added benefits of being able to blocking ip's, detect some web attacks and  protecting your application.
+
+### References
+
+1. [Setting Up with Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/get-set-up-for-amazon-ec2.html)
+
