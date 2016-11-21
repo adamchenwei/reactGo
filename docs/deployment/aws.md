@@ -30,6 +30,24 @@ Do the following:
 
 Read more about IAM best practices [here](http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html).
 
+#### Create a Key Pair
+
+A Linux instance - incidentally the instance we will be launching in EC2 - on AWS has no password. We will need to create a key pair in order to log in to our instance securely!
+
+Do the following:
+
+1. Sign in to AWS with the created IAM user's link
+2. Go to the Amazon EC2 Console
+3. Ensure you are in the right region - e.g. Asia Pacific (Sydney)
+4. Under **Network & Security** > KeyPairs
+5. Create Key Pair > Pick a name that's easy to remember
+6. Save it in a safe place
+  - Modify the permissions of the file so that only you can read it 
+```bash
+chmod 400 your_file.pem
+```
+
+
 #### SECURITY GROUP
 
 Before you initialize a new instance you will need to set up a security group. This security group will just open the ports you need for development. Once you go to production you should SERIOUSLY consider a more locked down security group.
