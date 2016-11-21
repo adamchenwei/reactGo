@@ -16,14 +16,19 @@ Amazon Elastic Compute Cloud (EC2) is a web service which provides resizable com
 
 :information_source: IAM - Identity and Access Management
 
-AWS does not recommend accessing AWS services using the credentials for your AWS account, they recommend using AWS IAM instead.
+🔒
+Lock away your AWS account (root) access keys because they provide **_unrestricted_** access to your AWS resources. Create the IAM user with administrative permissions instead! All future interactions should be through the AWS account's users and their own keys instead of the root user
 
 Do the following:
 
 1. Create an IAM user
+  - Select **AWS Management Console access - with a password**
 2. Add the user to an IAM group with administrative permissions/grant this user administrative permissions.
+  - Give your group a name
+  - Select **AdministratorAccess** (or a relevant group)
 3. :tada: Have some wine - You can now access AWS using a special URL and the credentials for the IAM user!
 
+Read more about IAM best practices [here](http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html).
 
 #### SECURITY GROUP
 
@@ -104,4 +109,5 @@ A more production ready solution would be to use [NginX](https://www.nginx.com/r
 ### References
 
 1. [Setting Up with Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/get-set-up-for-amazon-ec2.html)
+2. [IAM Best Practices](http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
 
