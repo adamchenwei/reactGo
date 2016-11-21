@@ -12,6 +12,19 @@ Amazon has a lot of options, but we will be focused on the simpler way for deplo
 
 Amazon Elastic Compute Cloud (EC2) is a web service which provides resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier for developers. EC2 instances are located within a Virtual Private Cloud (VPC) that is a logically isolated network you control. Amazon VPC provides you with a number of network security tools you can use to control who can access your instances.
 
+#### CREATE AN IAM USER
+
+:information_source: IAM - Identity and Access Management
+
+AWS does not recommend accessing AWS services using the credentials for your AWS account, they recommend using AWS IAM instead.
+
+Do the following:
+
+1. Create an IAM user
+2. Add the user to an IAM group with administrative permissions/grant this user administrative permissions.
+3. :tada: Have some wine - You can now access AWS using a special URL and the credentials for the IAM user!
+
+
 #### SECURITY GROUP
 
 Before you initialize a new instance you will need to set up a security group. This security group will just open the ports you need for development. Once you go to production you should SERIOUSLY consider a more locked down security group.
