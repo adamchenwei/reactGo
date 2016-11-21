@@ -2,7 +2,7 @@
 
 Amazon AWS allows you access to a free tier of service for a year, so it is a great option if you are looking for a place to host your project and want to grow your Ops skills along with your dev skills.
 
-#### SIGN UP
+#### Sign Up
 
 The first thing you will need to do is sign up for an [account](https://aws.amazon.com/free/) - 🔒 remember to set up [multi factor authentication](https://aws.amazon.com/iam/details/mfa/) for increased security in your AWS environments! 
 
@@ -12,7 +12,7 @@ Amazon has a lot of options, but we will be focused on the simpler way for deplo
 
 Amazon Elastic Compute Cloud (EC2) is a web service which provides resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier for developers. EC2 instances are located within a Virtual Private Cloud (VPC) that is a logically isolated network you control. Amazon VPC provides you with a number of network security tools you can use to control who can access your instances.
 
-#### CREATE AN IAM USER
+#### Create an IAM User
 
 :information_source: IAM - Identity and Access Management
 
@@ -47,6 +47,11 @@ Do the following:
 chmod 400 your_file.pem
 ```
 
+#### Create a VPC
+
+:information_source: Amazon Virtual Private Cloud (VPC) enables you to launch AWS resources into a virtual network you've defined.
+
+:warning: If you already have a default VPC, you can skip to the next section. 
 
 #### SECURITY GROUP
 
