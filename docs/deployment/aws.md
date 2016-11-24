@@ -49,9 +49,21 @@ chmod 400 your_file.pem
 
 #### Create a VPC
 
-:information_source: Amazon Virtual Private Cloud (VPC) enables you to launch AWS resources into a virtual network you've defined.
+:information_source: A _virtual private cloud_ (VPC) is a virtual network dedicated to your AWS account. It is logically isolated from other virtual networks in the AWS cloud. You can launch AWS resources (e.g. EC2 instances) into your VPC and configure your VPC by selecting it's IP address range, create subnets, configure route tables, network gateways and security settings.
 
 :warning: If you already have a default VPC, you can skip to the next section. 
+
+Do the following:
+
+1. Go to VPC in your dashboard
+2. Select a region - remember to select the same region in which you created your Key Pair
+3. **Start VPC Wizard** 
+ - Select **VPC with a Single Public Subnet** 
+ - Enter a friendly **VPC Name** (leave other default settings) 
+ - Create VPC
+
+
+:information_source: A _subnet_ is a range of IP addresses in your VPC. Use a **public subnet** for resources that must be connected to the internet, and a **private subnet** for resources that won't be connected to the internet. 
 
 #### SECURITY GROUP
 
@@ -133,4 +145,5 @@ A more production ready solution would be to use [NginX](https://www.nginx.com/r
 
 1. [Setting Up with Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/get-set-up-for-amazon-ec2.html)
 2. [IAM Best Practices](http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
+3. [What is Amazon VPC](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Introduction.html)
 
