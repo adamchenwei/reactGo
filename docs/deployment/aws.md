@@ -65,20 +65,38 @@ Do the following:
 
 :information_source: A _subnet_ is a range of IP addresses in your VPC. Use a **public subnet** for resources that must be connected to the internet, and a **private subnet** for resources that won't be connected to the internet. 
 
-#### SECURITY GROUP
+#### Create a Security Group
+
+:information_source: A _security group_ acts as a firewall for associated instances, controlling inbound and outbound traffic at an instance level.
 
 Before you initialize a new instance you will need to set up a security group. This security group will just open the ports you need for development. Once you go to production you should SERIOUSLY consider a more locked down security group.
+
+Do the following:
+
+1. Go to the Amazon EC2 Console
+2. Select a region - remember to select the same region in which you created your Key Pair
+3. Click **Security Groups** in the Navigation Pane
+4. Click **Create Security Group**
+ - Pick a name + description
+ - Select a VPC
+ - Add inbound rules
+ - Create
+5. Enjoy the brief feeling of security before you get told off by your ops team members.
 
 This is what a basic security group should look like. The 2 custom ports are for the port we are running on in development and the default mongoDB port. If you are running on different ports replace these as needed.
 
 ```
   TYPE          PROTOCOL    PORT RANGE    SOURCE
   HTTP            TCP           80       0.0.0.0/0
-  SSH             TCP           22       0.0.0.0/0
+  SSH             TCP           22       <your IP address/32>
   HTTPS           TCP           443      0.0.0.0/0
 Custom TCP Rule   TCP           3000     0.0.0.0/0
 Custom TCP Rule   TCP           27017    0.0.0.0/0
 ```
+
+🔒 Amazon doesn't recommend that you allow SSH access from all IP addresses (0.0.0.0/0) to your instance, except for testing purposes and only for a short time! Lock that puppy down :dog:
+
+To specify an individual IP address in CIDR notation, add the routing suffix /32 to your IP address. You can check your public IP address in [http://checkip.amazonaws.com/](http://checkip.amazonaws.com/).
 
 ##### SETTING UP THE INSTANCE
 
