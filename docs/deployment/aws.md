@@ -98,13 +98,16 @@ Custom TCP Rule   TCP           27017    0.0.0.0/0
 
 To specify an individual IP address in CIDR notation, add the routing suffix /32 to your IP address. You can check your public IP address in [http://checkip.amazonaws.com/](http://checkip.amazonaws.com/).
 
-##### SETTING UP THE INSTANCE
+#### Create an EC2 instance
 
-Now it is time to create an instance. So make sure you are in the correct region. This should be the region that is closet to your geographic location. The drop down list in the top right hand corner.
+Now it is time to create an instance. Make sure you are in the correct region - the drop down is at the top-corner of the navigation bar! This should be the region that is closet to your geographic location.
 
-Once that is ready click on the instance option in the side bar and then click launch instance.
+You ready?
 
-Pick the Ubuntu Server 14.04 that is free tier eligible, follow through the steps, but the defaults should all suffice. Tag your project with a name and then apply the security group you created earlier, review and launch.
+1. Select **Launch Instance**
+2. Pick **Ubuntu Server 16.04 LTS** (it is free tier eligible)
+3. Follow through the steps, but the defaults should all suffice. 
+4. Tag your project with a name and then apply the security group you created earlier, review and launch.
 
 The last step will be to create or use an existing key pair. do this and save it someplace safe.
 
@@ -164,4 +167,5 @@ A more production ready solution would be to use [NginX](https://www.nginx.com/r
 1. [Setting Up with Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/get-set-up-for-amazon-ec2.html)
 2. [IAM Best Practices](http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
 3. [What is Amazon VPC](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Introduction.html)
+4. [Getting Started with Amazon EC2 Linux Instances](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html)
 
